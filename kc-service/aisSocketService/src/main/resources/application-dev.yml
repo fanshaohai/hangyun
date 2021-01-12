@@ -1,0 +1,46 @@
+#服务器端口
+server:
+  port: 9013
+
+demo:
+  name: demo-name
+
+#数据源配置
+#spring:
+#  datasource:
+#    url: ${kc.datasource.dev.url}
+#    username: ${kc.datasource.dev.username}
+#    password: ${kc.datasource.dev.password}
+#
+#tb:
+#  sla:
+#    service:
+#      name: tb-sla-zzc
+
+spring:
+  #排除DruidDataSourceAutoConfigure
+  autoconfigure:
+    exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
+  datasource:
+    dynamic:
+      #设置默认的数据源或者数据源组,默认值即为master
+#      primary: master
+      datasource:
+#        master:
+#          url: ${kc.datasource.mysql.url}
+#          username: ${kc.datasource.mysql.username}
+#          password: ${kc.datasource.mysql.password}
+#        slave:
+#          url: ${kc.datasource.highgo.url}
+#          username: ${kc.datasource.highgo.username}
+#          password: ${kc.datasource.highgo.password}
+#        master:
+#          url: jdbc:mysql://114.115.209.128:3306/tb_sts?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+#          username: root
+#          password: 979b8f07225ddffa
+        master:
+          url: jdbc:postgresql://120.221.94.227:9902/aisData?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+          username: highgo
+          password: highgo@123
+
+
